@@ -13,15 +13,21 @@
 # Установка приложения
 1. Клонировать репозиторий
 
-```git clone https://github.com/MaryIv76/kg2023-labrabota2-GetInfoFromImages.git```
+```
+git clone https://github.com/MaryIv76/kg2023-labrabota2-GetInfoFromImages.git
+```
 
 2. Перейти в папку Lab2
 
-```cd Lab2/```
+```
+cd Lab2/
+```
 
 3. Собрать проект, используя msbuild (**про msbuild смотреть ниже!**)
 
-```"C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe" "Lab2.csproj"```
+```
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe" "Lab2.csproj"
+```
 
 Если установлена Visual Studio 2022, то средства сборки устанавливаются в папку установки Visual Studio.
 Файл MSBuild.exe находится в папке установки MSBuild\Current\Bin.
