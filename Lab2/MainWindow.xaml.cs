@@ -150,7 +150,7 @@ namespace Lab2
             {
                 foreach (var tag in directory.Tags)
                 {
-                    pcxFileData[$"{directory.Name} - {tag.Name}"] = tag.Description;
+                    pcxFileData[string.Format("{0} - {1}", directory.Name, tag.Name)] = tag.Description;
                 }
             }
 
@@ -183,7 +183,7 @@ namespace Lab2
 
         private string CountPcxFileSize(int xMin, int xMax, int yMin, int yMax)
         {
-            return $"{xMax - xMin + 1} x {yMax - yMin + 1}";
+            return string.Format("{0} x {1}", xMax - xMin + 1, yMax - yMin + 1);
         }
 
         private int GetColorDepth(PixelFormat pixelFormat)
