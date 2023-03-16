@@ -29,6 +29,7 @@ cd Lab2/
 "C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe" "Lab2.csproj"
 ```
 
+### MSBuild
 Если установлена Visual Studio 2022, то средства сборки устанавливаются в папку установки Visual Studio.
 Файл MSBuild.exe находится в папке установки MSBuild\Current\Bin.
 
