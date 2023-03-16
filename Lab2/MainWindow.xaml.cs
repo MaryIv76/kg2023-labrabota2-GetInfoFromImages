@@ -230,7 +230,8 @@ namespace Lab2
                 return "Не удается получить информацию о сжатии";
             }
 
-            if (!CompressionTypes.TryGetValue(compressionId, out var compressionType))
+            string compressionType = "";
+            if (!CompressionTypes.TryGetValue(compressionId, out compressionType))
             {
                 return "Неопределенный тип сжатия";
             }
