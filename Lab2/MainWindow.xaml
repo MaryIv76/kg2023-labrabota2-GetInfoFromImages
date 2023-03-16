@@ -1,0 +1,27 @@
+﻿<Window x:Class="Lab2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab2"
+        mc:Ignorable="d"
+        Title="Чтение информации из графических файлов" Height="600" Width="1100">
+    <DockPanel Margin="10">
+        <WrapPanel HorizontalAlignment="Left" DockPanel.Dock="Top" Margin="0,0,0,10">
+            <Button Name="btnOpenFile" Click="BtnOpenFileClick"  Margin="0,0,15,0">Выберите файлы</Button>
+            <Button Name="btnOpenDirectory" Click="BtnOpenDirectoryClick">Выберите папку</Button>
+        </WrapPanel>
+        <ListView x:Name="lvFiles" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Имя файла" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Размер изображения (px)" DisplayMemberBinding="{Binding Size}"/>
+                    <GridViewColumn Header="Горизонтальное разрешение (dot/inch)" DisplayMemberBinding="{Binding HorizontalResolution}"/>
+                    <GridViewColumn Header="Вертикальное разрешение (dot/inch)" DisplayMemberBinding="{Binding VerticalResolution}"/>
+                    <GridViewColumn Header="Глубина цвета" DisplayMemberBinding="{Binding ColorDepth}"/>
+                    <GridViewColumn Header="Сжатие" DisplayMemberBinding="{Binding Compression}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</Window>
