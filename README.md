@@ -26,21 +26,28 @@ cd Lab2/
 3. Собрать проект, используя msbuild (**про msbuild смотреть ниже!**)
 
 ```
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe" "Lab2.csproj"
+"C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" "Lab2.csproj" /p:Configuration=Release /p:Platform=AnyCPU
 ```
 
-4. Lab2.exe будет создан в папке ```Lab2\bin\Debug\```
+4. Lab2.exe будет создан в папке ```Lab2\bin\Release\```
 
 ### MSBuild
-Если установлена Visual Studio 2022, то средства сборки устанавливаются в папку установки Visual Studio.
+1. MSBuild можно найти в папке C:\Windows\Microsoft.NET\Framework.
+
+Путь приблизительно такой: 
+
+```C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe```
+
+.NET Framework можно скачать [здесь](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
+
+2. Если установлена Visual Studio 2022, то средства сборки устанавливаются в папку установки Visual Studio.
 Файл MSBuild.exe находится в папке установки MSBuild\Current\Bin.
 
 Путь приблизительно такой: 
 
 ```C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe```
 
-Если нет Visual Studio, то MSBuild можно установить, используя "Средства сборки для Visual Studio 2022" (Build Tools for Visual Studio 2022)
-[https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
+В более ранних версиях Visual Studio расположение MSBuild может быть немного другим.
 
 # Описание
 Данное приложение является графическим приложением на WPF (Windows Presentation Foundation), написанным с помощью языка программирования C#.
