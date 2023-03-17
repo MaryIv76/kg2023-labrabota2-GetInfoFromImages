@@ -38,8 +38,6 @@ cd Lab2/
 
 ```C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe```
 
-.NET Framework можно скачать [здесь](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
-
 2. Если установлена Visual Studio 2022, то средства сборки устанавливаются в папку установки Visual Studio.
 Файл MSBuild.exe находится в папке установки MSBuild\Current\Bin.
 
