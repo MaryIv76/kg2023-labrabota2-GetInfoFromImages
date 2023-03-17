@@ -59,3 +59,45 @@ cd Lab2/
 * разрешение (dot/inch);
 * глубину цвета;
 * сжатие.
+
+Обрабатываемые форматы: jpg, jpeg, gif, tif, tiff, bmp, png, pcx.
+
+# Сопроводительная документация
+Для получения информации из изображений использовались классы `Bitmap` (`System.Drawing`) и `Image` (`System.Drawing`).
+
+С помощью Bitmap были получены данные о размере изображения, вертикальном и горизонтальном разрешении, глубине цвета. Например, получить размер изображения:
+```
+Bitmap bitmap = new Bitmap(fileName);
+string size = bitmap.Width + " x " + bitmap.Height;
+```
+
+С помощью Image было получено сжатие изображения:
+```
+Image image = Image.FromFile(fileName);
+PropertyItem propItem = image.GetPropertyItem(259);
+int compressionId = BitConverter.ToInt16(propItem.Value, 0);
+```
+
+Для получения информации из графических файлов с расширением .pcx была использована библиотека MetadataExtractor. С её помощью были получены данные о размере изображения, вертикальном и горизонтальном разрешении, глубине цвета. Например, получение горизонтального разрешения:
+```
+var directories = ImageMetadataReader.ReadMetadata(fileName);
+var pcxFileData = new Dictionary<string, string>();
+
+foreach (var directory in directories)
+{
+  foreach (var tag in directory.Tags)
+  {
+    pcxFileData[string.Format("{0} - {1}", directory.Name, tag.Name)] = tag.Description;
+  }
+}
+
+string horizontalResolution = pcxFileData["PCX - Horizontal DPI"];
+```
+
+Сжатие .pcx изображения было получено через байтовое представление файла:
+```
+byte[] bytes = new byte[3];
+var reader = new BinaryReader(new FileStream(fileName, FileMode.Open));
+reader.Read(bytes, 0, 3);
+```
+
